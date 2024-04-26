@@ -1,0 +1,55 @@
+
+public class Card {
+	private int rank;
+	private char suit;
+	public Card() {
+		rank = (int)(Math.random()*13+2);
+		int tempSuit = (int)(Math.random()*4);
+		switch (tempSuit){
+			case 0:
+				suit = '♠';
+			case 1:
+				suit = '♥';
+			case 2:
+				suit = '♦';
+			case 3:
+				suit = '♣';
+		}
+	}
+	public String toString() {
+		String output =  "";
+		output += rank + " of " + suit + "'s ";
+		return output;
+	}
+	public char getChar(){
+		char rankChar = ' ';
+		switch (rank){
+		case 11:
+			rankChar = 'J';
+		case 12:
+			rankChar = 'Q';
+		case 13:
+			rankChar = 'K';
+		case 14:
+			rankChar = 'A';
+		}
+		return rankChar;
+	}
+	public Card (Card other) {
+		this.rank = other.rank;
+		this.suit = other.suit;
+	}
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	public char getSuit() {
+		return suit;
+	}
+	public void setSuit(char suit) {
+		this.suit = suit;
+	}
+
+}

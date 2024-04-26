@@ -1,0 +1,36 @@
+
+public class dogDriver {
+
+	public static void main(String[] args) {
+		Puppy[] pound = new Puppy[10];
+		for(int i = 0; i < pound.length; i++) {
+			if (Math.random() < .5)
+				pound[i] = new Puppy();
+		}
+		for (Puppy dog:pound) {
+			if (dog != null)
+				System.out.println(dog.speak());
+		}
+		String[] names = new String[] {"Screamer", "Cotton", "Gus", "Fang", "Spot"};
+		shuffle(names);
+		int finger = 0;
+		for(int i = 0; i < pound.length; i++) {
+			if(pound[i]==null)
+				pound[i] = new Puppy(names[finger++]);
+			if(finger==names.length)
+				finger = 0;
+			}
+		for(Puppy dog:pound) {
+			System.out.println(dog.getName());
+		}
+		}
+	
+	public static void shuffle(String[] arr) {
+		for(int i = 0; i < arr.length; i++) {
+			int rSpot = (int)(Math.random()*arr.length);
+			String temp = arr[i];
+			arr[i] = arr[rSpot];
+			arr[rSpot] = temp;
+		}
+	}
+}

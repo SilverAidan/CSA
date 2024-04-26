@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+
+public class Marbles {
+	private ArrayList<String> marbles;
+
+	public Marbles(ArrayList<String> marbles) {
+		super();
+		this.marbles = marbles;
+	}
+
+	public ArrayList<String> getMarbles() {
+		return marbles;
+	}
+
+	public void setMarbles(ArrayList<String> marbles) {
+		this.marbles = marbles;
+	}
+
+	public Marbles(int count) {
+		marbles = new ArrayList<String>();
+		for(int i = 0; i < count; i++) {
+			int r = (int) (Math.random()*4);
+			switch(r) {
+			case 1:
+				marbles.add("yellow");
+				break;
+			case 2:
+				marbles.add("blue");
+				break;
+			case 3:
+				marbles.add("red");
+				break;
+			case 4:
+				marbles.add("green");
+				break;
+			}
+
+		}
+	}
+}

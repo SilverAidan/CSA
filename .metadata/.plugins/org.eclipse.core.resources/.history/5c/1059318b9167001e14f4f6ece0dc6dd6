@@ -1,0 +1,6 @@
+import java.util.Scanner;
+
+public class PigLatinLab {
+	Scanner console;
+	console = new Scanner(System.in);
+}

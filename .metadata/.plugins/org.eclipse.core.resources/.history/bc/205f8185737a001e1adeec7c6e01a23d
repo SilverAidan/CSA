@@ -1,0 +1,15 @@
+
+public class Sunshine {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int number;
+		int[] numbers;
+		numbers = new int[5];
+		System.out.println(numbers);
+		System.out.println(numbers[0]);
+		System.out.println(numbers.length);
+		numbers.length = 6;
+	}
+
+}

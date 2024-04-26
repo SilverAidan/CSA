@@ -1,0 +1,24 @@
+public class gamble {
+	//1 Spade 2 Heart 3 Diamond 4 Club
+	public static void main(String[] args) {
+		double profit = 0;
+		for(int i = 1;i<1000000;i++) {
+			int cardRank = (int)(Math.random()*13);
+			int cardSuit = (int)(Math.random()*4);
+			if(cardRank == 1 && cardRank == 1){
+				profit += 0;
+			}
+			else if(cardSuit == 2){
+				profit += 3;
+			}
+			else if(cardRank == 1){
+				profit += 10;
+			}
+		}
+		if(profit > 0){
+			System.out.println("Play it");
+		}else{
+			System.out.println("Rigged dont play");
+		}
+	}
+}

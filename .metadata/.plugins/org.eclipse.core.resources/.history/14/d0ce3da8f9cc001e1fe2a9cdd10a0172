@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+
+public class Towers implements Hanoi{
+	public int getCount() {
+		
+	}
+	
+	public void reset() {
+		
+		
+	}
+	
+	public void setTower(int rings) {
+		
+	}
+	
+	public boolean isSolved() {
+		return false;
+	}
+	
+	public boolean makeMove(int from, int to) {
+		return false;
+	}
+	
+	public ArrayList<Integer> getLeft() {
+		return null;
+	}
+	
+	public ArrayList<Integer> getMiddle() {
+		return null;
+	}
+	
+	public ArrayList<Integer> getRight() {
+		return null;
+	}
+	
+	public void setLeft(ArrayList<Integer> left) {
+		
+	}
+	
+	public void setMiddle(ArrayList<Integer> middle) {
+		
+	}
+	
+	public void setRight(ArrayList<Integer> right) {
+		
+	}
+}

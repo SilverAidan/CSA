@@ -1,0 +1,28 @@
+
+public class Helicopter extends Vehicle{
+	protected int maxPassengerWeight;
+	
+	Helicopter(){
+		name = "Honda Accord";
+		condition = 5;
+		miles = 0;
+	}
+
+	public Helicopter(String name, int condition, int miles, int maxPassengerWeight) {
+		super();
+		this.name = name;
+		this.condition = condition;
+		this.miles = miles;
+		this.maxPassengerWeight = maxPassengerWeight;
+	}
+	
+	public double getValue() {
+		if(condition == 0)
+			return 0;
+		return (super.getValue() + (5000*maxPassengerWeight));
+	}
+	
+	public double getScrapValue() {
+		return ((super.getValue() + (5000*maxPassengerWeight)) * .3);
+	}
+}

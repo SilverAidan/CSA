@@ -1,0 +1,11 @@
+package lifehappns;
+
+import java.util.ArrayList;
+
+public class lifeHappens {
+	private static void lifeHappens(ArrayList<String> animals) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

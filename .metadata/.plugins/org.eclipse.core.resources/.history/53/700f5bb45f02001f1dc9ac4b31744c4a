@@ -1,0 +1,60 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JPanel;
+
+public class lego extends JPanel{
+	private static final long serialVersionUID = 1L;
+	public int level;
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	
+	public lego(int x, int y, int width, int height) {
+		setBackground(Color.white);
+		this.setSize(getWidth(), getHeight());
+		level = 0;
+	}
+	public void paintComponent(Graphics gold) {
+		super.paintComponent(gold);
+		Graphics2D g = (Graphics2D)gold;
+		legoPiece l = new legoPiece(0, 0, 1600, 1000);
+		drawFractal(g,l,0);
+	}
+
+	private void drawFractal(Graphics2D g, legoPiece piece, int currentLevel) {
+		piece.drawLego(g);
+	    if (currentLevel >= level) {
+	        
+	        return;
+	    }
+
+	    // Calculate the size of the new cubes
+	    int newWidth = piece.getWidth() / 2;
+	    int newHeight = piece.getHeight() / 2;
+
+	    // Calculate the positions for the new cubes
+	    int x1 = piece.getX();
+	    int y1 = piece.getY();
+	    int x2 = piece.getX() + newWidth;
+	    int y2 = piece.getY() + newHeight;
+
+	    // Create new legoPiece objects for each new cube
+	    legoPiece topLeft = new legoPiece(x1, y1 - newHeight, newWidth, newHeight);
+	    legoPiece topRight = new legoPiece(x2, y1, newWidth, newHeight);
+	    legoPiece bottomLeft = new legoPiece(x1, y2, newWidth, newHeight);
+	    legoPiece bottomRight = new legoPiece(x2, y2, newWidth, newHeight);
+
+	    // Recursively draw each new cube
+	    drawFractal(g, topLeft, currentLevel + 1);
+	    drawFractal(g, topRight, currentLevel + 1);
+	    drawFractal(g, bottomLeft, currentLevel + 1);
+	    drawFractal(g, bottomRight, currentLevel + 1);
+	}
+
+}

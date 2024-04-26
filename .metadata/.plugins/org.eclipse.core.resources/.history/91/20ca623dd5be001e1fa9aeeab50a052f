@@ -1,0 +1,4 @@
+
+public class Helicopter extends Vehicle{
+	protected int maxPassengerWeight;
+}

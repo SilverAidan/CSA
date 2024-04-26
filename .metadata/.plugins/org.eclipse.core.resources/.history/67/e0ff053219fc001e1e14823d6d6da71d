@@ -1,0 +1,26 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class painting extends JPanel{
+	private static final long serialVersionUID = 1L;
+	public int level;
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	
+	public painting() {
+		setBackground(Color.white);
+		this.setSize(getWidth(), getHeight());
+		level = 0;
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+	}
+}

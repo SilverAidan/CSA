@@ -1,0 +1,33 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+
+public class legoPiece{
+	private int x, y, width, height;
+	
+	public legoPiece(int x, int y, int width, int height) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
+	
+	
+	public void drawLego(Graphics2D g) {
+		g.setColor(Color.red);
+		Rectangle r = new Rectangle(width/3, height/4, width/3, height/2);
+		g.fill(r);
+		g.setColor(Color.red.darker());
+		
+		g.fillOval(r.x, r.y, r.width / 4, r.width / 4);
+		g.fillOval(r.x + (3 * r.width / 4), r.y, r.width / 4, r.width / 4);
+		g.fillOval(r.x, r.y + (3 * r.height / 4), r.width / 4, r.width / 4);
+		g.fillOval(r.x + (3 * r.width / 4), r.y + (3 * r.height / 4), r.width / 4, r.width / 4);
+
+
+
+	}
+	
+	
+}

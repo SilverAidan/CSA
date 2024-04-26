@@ -1,0 +1,12 @@
+
+public class Helicopter extends Vehicle{
+	protected int maxPassengerWeight;
+	
+	public double getValue() {
+		return (Vehicle.tk + (5000*maxPassengerWeight));
+	}
+	
+	public double getScrapValue() {
+		return (this.getValue() * .3);
+	}
+}

@@ -1,0 +1,19 @@
+
+public class VroomVroom {
+	private double locX, locY, speed, mpg, gas;
+	private int dir;
+	public VroomVroom() {
+		locX = Math.random()*100-50;
+		locY = Math.random()*100-50;
+		speed = Math.random()*30+40;
+		gas = 20;
+		mpg = Math.random()*10+20;
+	}
+	public String toString() {
+		String output =  "";
+		output += "Im located at " + locX + ", " + locY + "\n";
+		output += "Facing " + dir + "\n";
+		output += "My tank is: " + gas + " burning at " + mpg;
+		return output;
+	}
+}

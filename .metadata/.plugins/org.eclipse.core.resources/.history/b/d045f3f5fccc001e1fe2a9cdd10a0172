@@ -1,0 +1,84 @@
+import java.util.ArrayList;
+
+public class Towers implements Hanoi{
+	private ArrayList<Integer> left = new ArrayList<Integer>();
+	private ArrayList<Integer> middle = new ArrayList<Integer>();
+	private ArrayList<Integer> right = new ArrayList<Integer>();
+	
+	public Towers() {
+		for(int i = 0; i < 5; i++)
+			left.set(i, i+1);
+	}
+	
+	public Towers(int size) {
+		for(int i = 0; i < size; i++)
+			left.set(i, i+1);
+	}
+
+	public Towers(ArrayList<Integer> left, ArrayList<Integer> middle, ArrayList<Integer> right) {
+		this.left = left;
+		this.middle = middle;
+		this.right = right;
+	}
+	
+	public String toString() {
+		String output = "";
+		int height = Math.max(left.size(), right.size());
+		height = Math.max(height, middle.size());
+		for(int i = 0; i < height; i++) {
+			output += left.get(left.size()-i) + "\n";
+		}
+		for(int i = 0; i < height; i++) {
+			output += middle.get(middle.size()-i) + "\n";
+		}
+		for(int i = 0; i < height; i++) {
+			output += right.get(right.size()-i) + "\n";
+		}
+	}
+
+	public int getCount() {
+		
+	}
+	
+	public void reset() {
+		
+		
+	}
+	
+	public void setTower(int rings) {
+		
+	}
+	
+	public boolean isSolved() {
+
+	}
+	
+	public boolean makeMove(int from, int to) {
+
+	}
+
+	public ArrayList<Integer> getLeft() {
+		return left;
+	}
+
+	public void setLeft(ArrayList<Integer> left) {
+		this.left = left;
+	}
+
+	public ArrayList<Integer> getMiddle() {
+		return middle;
+	}
+
+	public void setMiddle(ArrayList<Integer> middle) {
+		this.middle = middle;
+	}
+
+	public ArrayList<Integer> getRight() {
+		return right;
+	}
+
+	public void setRight(ArrayList<Integer> right) {
+		this.right = right;
+	}
+
+}

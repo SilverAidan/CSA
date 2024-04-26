@@ -1,0 +1,88 @@
+
+public class Mancala {
+	private int[] board;
+	private int box1;
+	private int box2;
+	private boolean turn;
+	public Mancala() {
+		board = new int[] {4,4,4,4,4,4,4,4,4,4,4,4};
+		box1 = 0; 
+		box2 = 0; 
+		turn = false;
+		
+	}
+	public Mancala(int[] board, int box1, int box2, boolean turn) {
+		this.board = board;
+		this.box1 = box1;
+		this.box2 = box2;
+		this.turn = turn;
+		
+	}
+	public String toString() {
+		String output = "";
+		if (turn == false)
+			output += "Player 1's turn" + "\n\n";
+		if (turn == true) 
+			output += "Player 2's turn" + "\n\n";
+		output += " " + board[11] + " " +  board[10] + " " + board[9] + " " + board[8] + " " + board[7] + " " + board[6] + "\n" +
+		box1 + "           " + box2 + "\n" + 
+		" " + board[0] + " " + board[1] + " " + board[2] + " " + board[3] + " " + board[4] + " " + board[5] + "\n";
+		return output;
+	}
+	public int piecesLeft() {
+		int output = 0;
+		output += board[0] + board[1] + board[2] + 
+		board[3] + board[4] + board[5] + board[6] + 
+		board[7] + board[8] + board[9] + board[10] + 
+		board[11];
+		return output;
+	}
+	public void resetBoard() {
+		board = new int[] {4,4,4,4,4,4,4,4,4,4,4,4};
+		box1 = 0; 
+		box2 = 0; 
+		turn = false;
+	}
+	public boolean makeMove(int boxNumber) {
+		if(boxNumber > 11 || boxNumber < 0) 
+			return false;
+		if((boxNumber > 5 && turn == false) || (boxNumber < 5 && turn == true)) 
+			return false;
+		int boxInteger = board[boxNumber]; 
+		board[boxNumber]= 0;
+		int runner = boxNumber + 1;
+		for(int i = 0; i < boxInteger; i++) {
+			board[runner]++;
+			runner++;
+			if(i == 5) {
+				boxInteger--;
+				box1++;
+			}
+		}
+		return true;
+	}
+	public int[] getBoard() {
+		return board;
+	}
+	public void setBoard(int[] board) {
+		this.board = board;
+	}
+	public int getBox1() {
+		return box1;
+	}
+	public void setBox1(int box1) {
+		this.box1 = box1;
+	}
+	public int getBox2() {
+		return box2;
+	}
+	public void setBox2(int box2) {
+		this.box2 = box2;
+	}
+	public boolean isTurn() {
+		return turn;
+	}
+	public void setTurn(boolean turn) {
+		this.turn = turn;
+	}
+}

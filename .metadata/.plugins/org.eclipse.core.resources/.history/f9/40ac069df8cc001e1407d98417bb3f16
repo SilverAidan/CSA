@@ -1,0 +1,14 @@
+// Interface for the Driver class
+    interface Driver {
+        // Method to set up the tower of Hanoi
+        void setupTower(int rings);
+        
+        // Method to allow the user to solve the tower or demonstrate the solution
+        void solveOrDemonstrate();
+        
+        // Method to display the current state of the board
+        void displayBoard();
+        
+        // Method to check if the game is over
+        boolean isGameOver();
+    }

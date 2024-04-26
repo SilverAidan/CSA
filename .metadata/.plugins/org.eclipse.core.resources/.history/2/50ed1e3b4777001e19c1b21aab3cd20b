@@ -1,0 +1,15 @@
+
+public class BragDriver {
+
+	public static void main(String[] args) {
+		Hand Aidan = new Hand();
+		Hand Jonah = new Hand();
+		Aidan.Deal();
+		Card card1 = new Card(4, '♠');
+		Card card2 = new Card(7, '♠');
+		Card card3 = new Card(6, '♠');
+		Aidan.Deal(card1, card2, card3);
+		System.out.println(Aidan.Value());
+	}
+
+}

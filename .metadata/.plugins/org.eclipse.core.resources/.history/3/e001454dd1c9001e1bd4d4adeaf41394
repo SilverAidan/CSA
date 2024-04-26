@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+
+public class RayList {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> carl =  new ArrayList<Integer>();
+		for(int i = 0; i < 10; i++) {
+			carl.add(i*i);
+		}
+		System.out.println(carl);
+	}
+
+}

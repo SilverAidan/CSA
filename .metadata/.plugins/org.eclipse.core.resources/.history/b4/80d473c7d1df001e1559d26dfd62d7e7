@@ -1,0 +1,34 @@
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JPanel;
+
+public class Table extends JPanel{
+	private Piece[] kirbies;
+	public Table() {
+		kirbies = new Piece[10];
+		for(int i = 0; i < kirbies.length; i++) {
+			kirbies[i] = new Piece();
+		}
+	}
+	
+	public Table(Piece[] kirbies, int width, int height) {
+		super();
+		this.kirbies = kirbies;
+	}
+	
+	public void paintComponent(Graphics g) {
+		Graphics2D newG = (Graphics2D)g;
+		for(int i = 0; i < kirbies.length; i++) {
+			newG.setColor(kirbies[i].getC());
+			newG.fillOval(50+i * kirbies.length*15, 200, 100, 100);
+		}
+	}
+	
+	public Piece[] getkirbies() {
+		return kirbies;
+	}
+	
+	public void setkirbies(Piece[] kirbies) {
+		this.kirbies = kirbies;
+	}
+}

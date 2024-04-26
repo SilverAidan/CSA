@@ -1,0 +1,14 @@
+
+public class LoopsIntro {
+
+	public static void main(String[] args) {
+		int n = 4;
+		int fingers = 0;
+		int sequence = 0;
+		int sum = 0;
+		while (fingers < n):
+			
+
+	}
+
+}

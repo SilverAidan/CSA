@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+public class RayList {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> carl =  new ArrayList<Integer>();
+		for(int i = 0; i < 10; i++) {
+			carl.add(i*i);
+		}
+		System.out.println(carl+"\n");
+		
+		for(int i = 0; i < carl.size(); i++) {
+			if(carl.get(i)%2 == 1) {
+				carl.remove(i);
+				i--;
+			}
+		}
+		System.out.println(carl+"\n");
+		
+		for(int i = 0; i < carl.size() - 1; i+=2) {
+			carl.add(i+1, (carl.get(i) + carl.get(i+1))/2);
+		}
+		System.out.println(carl);
+	}
+	public static void swap(ArrayList<Integer>, int i, int j) {
+		
+	}
+
+}

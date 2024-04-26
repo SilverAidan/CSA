@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+public class Prison {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] prison = new int[10];
+		
+		for(int i = 0; i < prison.length; i++) {
+			prison[i] = i;	
+		}
+		shuffle(prison);
+		System.out.println(Arrays.toString(prison));
+	}
+	public static void shuffle(int[] prison) {
+		for(int i = 0; i < prison.length; i++) {
+			int r = (int)(Math.random()*prison.length);
+			int temp = prison[i];
+			prison[r] = temp;
+		}
+	}
+
+
+}

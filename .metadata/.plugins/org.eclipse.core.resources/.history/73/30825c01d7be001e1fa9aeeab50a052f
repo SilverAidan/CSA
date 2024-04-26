@@ -1,0 +1,8 @@
+
+public class Car extends Vehicle{
+	protected static int activeCars;
+	
+	public double getScrapValue() {
+		
+	}
+}

@@ -1,0 +1,41 @@
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+
+public class baseplate {
+	public static int level = 0;
+	
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		frame.setTitle("LEGO Recursion");
+		frame.setSize(1600,1000);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+		
+		JSlider slider = new JSlider(SwingConstants.HORIZONTAL, 0, 15, 0);
+		slider.setMajorTickSpacing(5);
+		slider.setMinorTickSpacing(1);
+		slider.setPaintLabels(true);
+		slider.setPaintTicks(true);
+		frame.add(slider, BorderLayout.SOUTH);
+		lego p = new lego(500, 200, 800, 800);
+		frame.add(p, BorderLayout.CENTER);
+		
+		frame.setVisible(true);
+		
+		slider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				if(slider.getValue() != level) {;
+					level = slider.getValue();
+					p.setLevel(level);
+					frame.repaint();
+				}
+			}
+		});
+	}
+
+}

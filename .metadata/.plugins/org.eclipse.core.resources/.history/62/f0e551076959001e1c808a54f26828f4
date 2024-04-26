@@ -1,0 +1,26 @@
+
+public class gamble {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int rando = (int) (Math.random()*4);
+		
+		double profit = 0;
+		for(int i = 0;i<1000000;i++) {
+			int cardRank1 = (int)(Math.random()*13);
+			int cardSuit1 = (int)(Math.random()*4);
+			int cardRank2 = (int)(Math.random()*13);
+			int cardSuit2 = (int)(Math.random()*4);
+			int cardRank3 = (int)(Math.random()*13);
+			int cardSuit3 = (int)(Math.random()*4);
+			if((cardRank1 == 12||cardRank2 == 12||cardRank3 == 12)&&(cardSuit1 == cardSuit2 && cardSuit1 == cardSuit3)){
+				profit += 0;
+			}else if(cardRank1 == 12||cardRank2 == 12||cardRank3 == 12){
+				profit += 3;
+			}else if(cardSuit1 == cardSuit2 && cardSuit1 == cardSuit3){
+				profit -= 10;
+			}
+		}
+		System.out.println(profit);
+	}
+}

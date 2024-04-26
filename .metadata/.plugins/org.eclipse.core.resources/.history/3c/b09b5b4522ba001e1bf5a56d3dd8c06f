@@ -1,0 +1,11 @@
+
+public class Zoo {
+
+	public static void main(String[] args) {
+		Bear Pooh = new Bear();
+		Panda Po = new Panda();
+		System.out.print(Po.eat());
+
+	}
+
+}

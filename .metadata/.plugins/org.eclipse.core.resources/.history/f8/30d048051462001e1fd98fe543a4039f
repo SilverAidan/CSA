@@ -1,0 +1,35 @@
+
+public class Cheese {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 3;
+		String str = "Friday's are awesome";
+		String str2 = str;//not more date
+		int y = x;
+		String str3;
+		System.out.println(str.length());//6
+		System.out.println(str.charAt(1));//r
+		System.out.println(str.indexOf('r'));
+		System.out.println(str.indexOf('r',2));
+		
+		String subset = str.substring(3,6);
+		System.out.println(subset);
+		
+		int alphaDiff = "zoo".compareTo("Alphabet");
+		System.out.println(alphaDiff);
+		String word = "Hello";
+		System.out.println(ceaserCypher(word, 99997600 + 1));
+		
+	}
+	public static String ceaserCypher(String stuff, int shift) {
+		String output = "";
+		for (int i = 0; i<stuff.length();i++) {
+			char c = stuff.charAt(i);
+			c += shift;
+			output += c;
+		}
+		return output;
+	}
+
+}

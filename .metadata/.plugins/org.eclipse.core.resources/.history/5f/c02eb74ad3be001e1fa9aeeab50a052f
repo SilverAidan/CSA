@@ -1,0 +1,50 @@
+
+public class Vehicle {
+	protected String name;
+	protected int condition; 
+	protected int miles;
+	
+	Vehicle(){
+		name = "Honda Accord";
+		condition = 5;
+		miles = 0;
+	}
+
+	public Vehicle(String name, int condition, int miles) {
+		super();
+		this.name = name;
+		this.condition = condition;
+		this.miles = miles;
+	}
+	
+	public String toString() {
+		return "Model Name:" + "\n" + name + "\n" + "Condition:" + "\n" + condition + "\n" + "Mileage:" + "\n";
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getCondition() {
+		return condition;
+	}
+
+	public void setCondition(int condition) {
+		this.condition = condition;
+	}
+
+	public int getMiles() {
+		return miles;
+	}
+
+	public void setMiles(int miles) {
+		this.miles = miles;
+	}
+	
+
+}

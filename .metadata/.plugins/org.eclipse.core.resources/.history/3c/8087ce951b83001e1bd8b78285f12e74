@@ -1,0 +1,21 @@
+
+public class Mancala {
+	private int[] board;
+	private int box1;
+	private int box2;
+	private boolean turn;
+	public Mancala() {
+		board =new int[] {4,4,4,4,4,4,4,4,4,4,4,4};
+		box1 = 0; 
+		box2 = 0; 
+		turn = true;
+		
+	}
+	public String toString() {
+		String output = "";
+		output += "  " + board[11] + " " +  board[10] + " " + board[9] + " " + board[8] + " " + board[7] + " " + board[6] + "\n" +
+		box1 + "           " + box2 + "\n" + 
+		board[5] + " " + board[4] + " " + board[3] + " " + board[2] + " " + board[1] + " " + board[0];
+		return output;
+	}
+}

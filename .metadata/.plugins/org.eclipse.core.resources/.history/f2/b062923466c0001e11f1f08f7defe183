@@ -1,0 +1,12 @@
+
+public class Truck extends Car{
+	
+	
+	
+	public boolean Tow(Vehicle other) {
+		if(other instanceof Truck || other.getCondition() == 0)
+			return false;
+		other.setCondition(0);
+		return true;
+	}
+}

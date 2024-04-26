@@ -1,0 +1,25 @@
+
+public class Mancala {
+	private int[] board;
+	private int box1;
+	private int box2;
+	private boolean turn;
+	public Mancala() {
+		board =new int[] {4,4,4,4,4,4,4,4,4,4,4,4};
+		box1 = 0; 
+		box2 = 0; 
+		turn = false;
+		
+	}
+	public String toString() {
+		String output = "";
+		if (turn == false)
+			output += "  Player 1" + "\n\n";
+		if (turn == true) 
+			output += "  Player 2" + "\n\n";
+		output += " " + board[11] + " " +  board[10] + " " + board[9] + " " + board[8] + " " + board[7] + " " + board[6] + "\n" +
+		box1 + "           " + box2 + "\n" + 
+		" " + board[0] + " " + board[1] + " " + board[2] + " " + board[3] + " " + board[4] + " " + board[5];
+		return output;
+	}
+}

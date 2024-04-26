@@ -1,0 +1,21 @@
+
+public class BragDriver {
+
+	public static void main(String[] args) {
+		Hand Aidan = new Hand();
+		Hand Jonah = new Hand();
+		Aidan.Deal();
+		Card card1 = new Card('Q', '♠');
+		Card card2 = new Card(8, '♠');
+		Card card31 = new Card(6, '♠');
+		Card card32 = new Card(6, '♥');
+		Aidan.Deal(card1, card2, card31);
+		Jonah.Deal(card1, card2, card32);
+		System.out.println(Aidan);
+		System.out.println(Jonah);
+		System.out.println(card1.getRank());
+		System.out.println(Aidan.equals(Jonah));
+		System.out.println(Aidan.compareTo(Jonah));
+	}
+
+}

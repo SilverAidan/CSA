@@ -1,0 +1,26 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
+public class Vehicle extends JPanel {
+	private Color cabinColor;
+	private Color rimColor;
+	private int numWindows;
+	
+	public Vehicle() {
+		cabinColor = Color.yellow;
+		rimColor = Color.gray;
+		numWindows = 2;
+		setBackground(Color.cyan);
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.setColor(cabinColor);
+		g.fillRect(50, 600, 200, 70);
+		g.fillRect(85, 550, 130, 50);
+		g.setColor(rimColor);
+		g.fillOval(60, 660, 30, 30);
+		g.fillOval(200, 660, 30, 30);
+	}
+	
+}

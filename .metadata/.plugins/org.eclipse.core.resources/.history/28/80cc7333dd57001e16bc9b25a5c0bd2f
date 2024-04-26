@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class CrapsLab {
+
+	public static void main(String[] args) {
+		Scanner console;
+		console = new Scanner(System.in);
+		System.out.println("You wanna test your luck and kiss your money goodbye? 1 yes 2 no: ");
+		boolean gamble = console.nextBoolean();
+		if(gamble == false)
+			System.out.println("bye");
+		else{
+			System.out.println("How much do you have?: ");
+			double cashMoney = console.nextDouble();
+			System.out.println("How much are you betting?: ");
+			double betAmount = console.nextDouble();
+			while(cashMoney > 0) {
+				switch(roll) {
+				case(7):
+					cashMoney = cashMoney + betAmount;
+					System.out.println("You win, you got back double what you bet! ");
+				case(11):
+					cashMoney = cashMoney + betAmount;
+					System.out.println("You win, you got back double what you bet! ");
+				case(2):
+					cashMoney = cashMoney - betAmount;
+					System.out.println("You lose :/ ");
+				case(3):
+					cashMoney = cashMoney - betAmount;
+					System.out.println("You lose :/ ");
+				case(12):
+					cashMoney = cashMoney - betAmount;
+					System.out.println("You lose :/ ");
+				}
+			}
+		}
+		console.close();
+	}
+}

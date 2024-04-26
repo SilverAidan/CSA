@@ -1,0 +1,17 @@
+
+public class Car extends Vehicle{
+	protected static int activeCars;
+	
+	public  getValue() {
+		return (super.getValue() + (1000 * condition));
+	}
+	
+	public double getScrapValue() {
+		double value = ((tk + (ek*5)*0.1) - (500*(miles/1000)));
+		if(value > 2000)
+			return 2000;
+		if(value < 0)
+			return 0;
+		return value;
+	}
+}

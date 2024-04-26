@@ -1,0 +1,14 @@
+
+public class dogDriver {
+
+	public static void main(String[] args) {
+		Puppy[] pound = new Puppy[10];
+		for(int i = 0; i < pound.length; i++)
+			if (Math.random() < .5)
+				pound[i] = new Puppy();
+		for (Puppy dog:pound)
+			if (dog != null)
+				System.out.println(dog.speak());
+	}
+
+}

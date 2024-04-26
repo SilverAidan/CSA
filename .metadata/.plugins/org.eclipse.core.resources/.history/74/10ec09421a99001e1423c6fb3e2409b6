@@ -1,0 +1,9 @@
+
+public class PawnDriver {
+
+	public static void main(String[] args) {
+		BoardWithPawns bruh = new BoardWithPawns();
+		System.out.println(bruh);
+	}
+
+}

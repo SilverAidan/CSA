@@ -1,0 +1,72 @@
+import java.util.Arrays;
+
+public class LookSee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {1, 5, 8, 20, 22, 29, 30, 33, 34};
+		System.out.println(goodLook(arr, 33));
+		int[] brr = new int[20];
+		for(int i = 0; i < brr.length; i++) {
+			brr[i] = (int)(Math.random()*brr.length);
+		}
+		System.out.println(Arrays.toString(brr));
+		bubbleSort(brr);
+		System.out.println(Arrays.toString(brr));
+	}
+	public static int goodLook(int[] arr, int value) {
+		int leftie = 0;
+		int rightie = arr.length-1;
+		while(leftie <= rightie) {
+			int lookSpot = (leftie + rightie)/2;
+			System.out.println(lookSpot);
+			if(arr[lookSpot] == value) {
+				return lookSpot;
+			}
+			else if(arr[lookSpot] > value) {
+				rightie = lookSpot - 1;
+			}else {
+				leftie = lookSpot + 1;
+			}
+		}
+		
+		return -1;
+	}
+	public static void bubbleSort(int[] arr) {
+		boolean hasSwap; int scans = 0;
+		do {
+			hasSwap = false;
+			for(int i = 0; i < arr.length - scans - 1; i++) {
+				if(arr[i] > arr[i + 1]) {
+					swap(arr, i, i+1);
+					hasSwap = true;
+				}
+			}
+			System.out.println(Arrays.toString(arr));
+			scans++;
+		}while (hasSwap);
+	}
+	public static void swap(int[] arr, int i , int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	public static int goodLook(Comparable[] arr, Comparable value) {
+		int leftie = 0;
+		int rightie = arr.length-1;
+		while(leftie <= rightie) {
+			int lookSpot = (leftie + rightie)/2;
+			if(arr[lookSpot].equals(value)) {
+				return lookSpot;
+			}
+			else if(arr[lookSpot].compareTo(value) > 0) {
+				rightie = lookSpot - 1;
+			}else {
+				leftie = lookSpot + 1;
+			}
+		}
+		
+		return -1;
+	}
+
+}

@@ -1,0 +1,28 @@
+
+public class LookSee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {4,7,10,20,26,32,60};
+		System.out.println(goodLook(arr, 33));
+	}
+	public static int goodLook(int[] arr, int value) {
+		int leftie = 0;
+		int rightie = arr.length-1;
+		while(leftie <= rightie) {
+			int lookSpot = (leftie + rightie)/2;
+			System.out.println(lookSpot);
+			if(arr[lookSpot] == value) {
+				return lookSpot;
+			}
+			else if(arr[lookSpot] > value) {
+				rightie = lookSpot - 1;
+			}else {
+				leftie = lookSpot + 1;
+			}
+		}
+		
+		return -1;
+	}
+
+}

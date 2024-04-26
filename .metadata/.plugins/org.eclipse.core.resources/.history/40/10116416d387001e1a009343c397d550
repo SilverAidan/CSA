@@ -1,0 +1,16 @@
+
+public class WellesTurner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] books = new String[]{"Howls Moving Castle", "Ready Player One", "The Alchemist", "Castle in the Sky", "Kingdom Hearts Ultimania"};
+		Book[] library = new Book[5];
+		for(int i = 0; i <books.length; i++) {
+			library[i] = new Book(books[i++]);
+		}
+		library[2].setAuthor("Paul Coelho");
+		library[3].setAuthors(new String[] {"Laputa", "Miyazaki"});
+		System.out.println(library[3].getAuthors().getClass()));
+	}
+
+}
