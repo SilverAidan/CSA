@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="8"/>
+		<item key="selection" value="Blah"/>
 		<list key="findhistory">
+			<item value="Blah"/>
+			<item value="radius"/>
+			<item value="radisu"/>
 			<item value="4"/>
 			<item value="10"/>
 			<item value="&#x09;public void drawLego(Graphics2D g) {"/>
@@ -20,9 +23,6 @@
 			<item value="graphics"/>
 			<item value="int lookSpot = (leftie + rightie)/2;"/>
 			<item value="String output = &quot;&quot;;"/>
-			<item value=" 1,"/>
-			<item value="1"/>
-			<item value="11"/>
 		</list>
 		<list key="replacehistory">
 			<item value="8"/>
