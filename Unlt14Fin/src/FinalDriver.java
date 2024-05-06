@@ -6,7 +6,7 @@ public class FinalDriver {
 
 	public static void main(String[] args) throws IOException {
 		JFrame frame = new JFrame();
-		frame.setTitle("");
+		frame.setTitle("Shootem!");
 		frame.setSize(1600,1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
