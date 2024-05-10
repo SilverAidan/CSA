@@ -1,20 +1,26 @@
 import java.awt.Graphics;
+import javax.swing.Timer;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class Screen extends JPanel implements MouseMotionListener{
+public class Screen extends JPanel implements MouseMotionListener, KeyListener, ActionListener{
 	private static final long serialVersionUID = 1L;
 	private BufferedImage background;
 	private Target[] bros;
 	private Target selectedTarget;
+	private Timer t;
+	
 	public Screen(String backPath) throws IOException {
 		background = ImageIO.read(new File(backPath));
 		bros = new Target[5];
@@ -22,7 +28,10 @@ public class Screen extends JPanel implements MouseMotionListener{
 			bros[i] = new Target(300*i, 650, 200, "bro.png");
 		}
 		addMouseListener(new Clicky());
+		addKeyListener(this);
 		addMouseMotionListener(this);
+		t = new Timer(17,this);
+		setFocusable(true);
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -76,9 +85,47 @@ public class Screen extends JPanel implements MouseMotionListener{
 		
 	}
 
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getKeyCode() == KeyEvent.VK_R) {
+			for(int i = 0; i < bros.length; i++) {
+				bros[i].setX(300*i);
+				bros[i].setY(650);
+				repaint();
+			}
+		}
+		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+			t.start();
+		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		for(Target t : bros) {
+			t.setY(t.getY()-5);
+			repaint();
+		}
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+
 }

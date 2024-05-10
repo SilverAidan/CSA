@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Blah"/>
+		<item key="selection" value="if(me.getButton() == me.BUTTON1) {"/>
 		<list key="findhistory">
+			<item value="if(me.getButton() == me.BUTTON1) {"/>
 			<item value="Blah"/>
 			<item value="radius"/>
 			<item value="radisu"/>
@@ -15,14 +16,6 @@
 			<item value="10"/>
 			<item value="&#x09;public void drawLego(Graphics2D g) {"/>
 			<item value="8"/>
-			<item value="6"/>
-			<item value="5"/>
-			<item value="Graphics"/>
-			<item value="Graphi"/>
-			<item value="graphic"/>
-			<item value="graphics"/>
-			<item value="int lookSpot = (leftie + rightie)/2;"/>
-			<item value="String output = &quot;&quot;;"/>
 		</list>
 		<list key="replacehistory">
 			<item value="8"/>
