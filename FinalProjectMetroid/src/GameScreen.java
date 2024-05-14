@@ -14,13 +14,12 @@ public class GameScreen extends JPanel{
 	
 	public GameScreen(String backPath) throws IOException {
 		background = ImageIO.read(new File(backPath));
-		setFocusable(true);
 	}
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D gn = (Graphics2D)g;
-		gn.drawImage(background, 0, 0, null);
+		gn.drawOval(50, 50, 100, 100);
 	}
 
 }

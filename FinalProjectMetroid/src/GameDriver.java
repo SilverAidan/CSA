@@ -11,9 +11,8 @@ public class GameDriver {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);	
 		frame.setFocusable(true);
-		GameScreen s = new GameScreen("\\Sprites\\Stage.png");
+		GameScreen s = new GameScreen("\\sprites\\Stage.png");
 		frame.add(s);
 		frame.setVisible(true);
 	}
-
 }
