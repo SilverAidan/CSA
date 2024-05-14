@@ -11,7 +11,7 @@ public class GameDriver {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);	
 		frame.setFocusable(true);
-		GameScreen s = new GameScreen("\\sprites\\Stage.png");
+		GameScreen s = new GameScreen("C:\\Users\\kametza\\Desktop\\APCS\\FinalProjectMetroid\\sprites\\Stage.png");
 		frame.add(s);
 		frame.setVisible(true);
 	}
