@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="if(me.getButton() == me.BUTTON1) {"/>
+		<item key="selection" value="t "/>
 		<list key="findhistory">
+			<item value="t "/>
+			<item value="Timer"/>
+			<item value="t"/>
 			<item value="if(me.getButton() == me.BUTTON1) {"/>
 			<item value="Blah"/>
 			<item value="radius"/>
@@ -18,13 +21,13 @@
 			<item value="8"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="8"/>
 			<item value="20"/>
 			<item value="5"/>
 			<item value="7"/>
 			<item value="3"/>
 			<item value="4"/>
-			<item value=""/>
 			<item value="board"/>
 		</list>
 	</section>

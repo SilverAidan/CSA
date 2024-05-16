@@ -30,7 +30,7 @@ public class Screen extends JPanel implements MouseMotionListener, KeyListener, 
 		addMouseListener(new Clicky());
 		addKeyListener(this);
 		addMouseMotionListener(this);
-		t = new Timer(17,this);
+		t = new Timer(17,this);d
 		setFocusable(true);
 	}
 	
@@ -39,7 +39,7 @@ public class Screen extends JPanel implements MouseMotionListener, KeyListener, 
 		Graphics2D gn = (Graphics2D)g;
 		g.drawImage(background, 0, 0, null);
 		for(Target bro:bros) {
-			bro.draw(gn);
+			
 		}
 	}
 	
@@ -88,6 +88,7 @@ public class Screen extends JPanel implements MouseMotionListener, KeyListener, 
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		System.out.println("HEHEHHA");
 		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_R) {
 			for(int i = 0; i < bros.length; i++) {
