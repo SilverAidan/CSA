@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Users\Aidan_3fq50to\Documents\GitHub\All-CSA-Code\.git"/>
 	<list key="RepositorySelectionPage.UsedUris">
 		<item value="https://github.com/SilverAidan/TaxCalculator"/>
 		<item value="https://github.com/SilverAidan/TaxCalculator.git"/>
