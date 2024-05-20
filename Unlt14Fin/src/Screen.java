@@ -30,7 +30,7 @@ public class Screen extends JPanel implements MouseMotionListener, KeyListener, 
 		addMouseListener(new Clicky());
 		addKeyListener(this);
 		addMouseMotionListener(this);
-		t = new Timer(17,this);d
+		t = new Timer(17,this);
 		setFocusable(true);
 	}
 	
