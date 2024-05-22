@@ -17,7 +17,7 @@ public class GameScreen extends JPanel{
 	private int xDelta = 100, yDelta = 500; 
 	private BufferedImage aim, run;
 	private BufferedImage[][] animations;
-	private int animationTick, animationIndex, animationSpeed = 10;
+	private int animationTick, animationIndex, animationSpeed = 20;
 	private int playerAction = idle;
 	private int playerDirection = -1;
 	private boolean aiming = false, moving = false;
@@ -69,12 +69,16 @@ public class GameScreen extends JPanel{
 		setPreferredSize(size);
 		
 	}
-
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
+	
+	public void updateGame() {
 		updateAnimationTick();
 		setAnimation();
 		updatePosition();
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		
 		g.drawImage(animations[playerAction][animationIndex], xDelta, yDelta, 81, 108, null);
 	}
 
@@ -125,7 +129,6 @@ public class GameScreen extends JPanel{
 	public void setDirection(int direction) {
 	    this.playerDirection = direction;
 	    moving = true;
-	    animationIndex = 0;
 	}
 	
 	public boolean isMoving() {
