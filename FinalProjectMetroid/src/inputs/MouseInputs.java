@@ -22,18 +22,18 @@ public class MouseInputs implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		if(e.getY() < 266) {
-			if(!screen.isMoving())
-				screen.setPlayerAction(aimingUp);
-		}
-		if(e.getY() < 532 && e.getY() > 266) {
-			if(!screen.isMoving())
-				screen.setPlayerAction(aimingStraight);
-		}
-		if(e.getY() > 532) {
-			if(!screen.isMoving())
-				screen.setPlayerAction(aimingDown);
-		}
+//		if(e.getY() < 266) {
+//			if(!screen.getLoop().getSamus().isMoving())
+//				screen.getLoop().getSamus().setPlayerAction(aimingUp);
+//		}
+//		if(e.getY() < 532 && e.getY() > 266) {
+//			if(!screen.getLoop().getSamus().isMoving())
+//				screen.getLoop().getSamus().setPlayerAction(aimingStraight);
+//		}
+//		if(e.getY() > 532) {
+//			if(!screen.getLoop().getSamus().isMoving())
+//				screen.getLoop().getSamus().setPlayerAction(aimingDown);
+//		}
 	}
 
 	@Override

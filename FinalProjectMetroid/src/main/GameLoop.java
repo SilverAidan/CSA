@@ -1,6 +1,9 @@
 package main;
 
+import java.awt.Graphics;
 import java.io.IOException;
+
+import entities.Samus;
 
 public class GameLoop implements Runnable {
 
@@ -10,13 +13,23 @@ public class GameLoop implements Runnable {
 	private final int fps = 120;
 	private final int ups = 200;
 
+	private Samus aran;
+	
 	public GameLoop() throws IOException {
-
-		screen = new GameScreen();
+		initializeEntities();
+		screen = new GameScreen(this);
 		window = new GameWindow(screen);
 		screen.requestFocusInWindow();
 		startGameLoop();
+	}
 
+	private void initializeEntities() throws IOException {
+		aran = new Samus(200,200);
+		
+	}
+	
+	public void render(Graphics g) {
+		aran.render(g);
 	}
 
 	private void startGameLoop() {
@@ -25,7 +38,7 @@ public class GameLoop implements Runnable {
 	}
 	
 	public void update() {
-		screen.updateGame();
+		aran.update();
 	}
 
 	@Override
@@ -72,6 +85,14 @@ public class GameLoop implements Runnable {
 			}
 		}
 
+	}
+	
+	public void WindowFocusLost() {
+		aran.resetDirBooleans();
+	}
+	
+	public Samus getSamus() {
+		return aran;
 	}
 
 

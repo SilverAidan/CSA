@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="t "/>
+		<item key="selection" value="moving"/>
 		<list key="findhistory">
+			<item value="moving"/>
+			<item value="aiming"/>
+			<item value="setPlayerAction"/>
 			<item value="t "/>
 			<item value="Timer"/>
 			<item value="t"/>

@@ -24,16 +24,16 @@ public class KeyboardInputs implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		switch(e.getKeyCode()) {
 		case KeyEvent.VK_W:
-			screen.setDirection(up);
+			screen.getLoop().getSamus().setUp(true);
 			break;
 		case KeyEvent.VK_A:
-			screen.setDirection(left);
+			screen.getLoop().getSamus().setLeft(true);
 			break;
 		case KeyEvent.VK_S:
-			screen.setDirection(down);
+			screen.getLoop().getSamus().setDown(true);
 			break;
 		case KeyEvent.VK_D:
-			screen.setDirection(right);
+			screen.getLoop().getSamus().setRight(true);
 			break;
 		}
 		
@@ -43,16 +43,16 @@ public class KeyboardInputs implements KeyListener {
 	public void keyReleased(KeyEvent e) {
 		switch(e.getKeyCode()) {
 		case KeyEvent.VK_W:
-			screen.setMoving(false);
+			screen.getLoop().getSamus().setUp(false);
 			break;
 		case KeyEvent.VK_A:
-			screen.setMoving(false);
+			screen.getLoop().getSamus().setLeft(false);
 			break;
 		case KeyEvent.VK_S:
-			screen.setMoving(false);
+			screen.getLoop().getSamus().setDown(false);
 			break;
 		case KeyEvent.VK_D:
-			screen.setMoving(false);
+			screen.getLoop().getSamus().setRight(false);
 			break;
 		}
 	}
