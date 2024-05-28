@@ -13,10 +13,10 @@ public class Samus extends Entity{
 	private BufferedImage[][] animations;
 	private int animationTick, animationIndex, animationSpeed = 20;
 	private int playerAction = idle;
-	private boolean moving = false;
+	private boolean moving = false, shooting = false;
 	private boolean left, up, right, down;
 	private float playerSpeed = 2.0f;
-	
+
 	public Samus(float x, float y) throws IOException {
 		super(x, y);
 		loadAnimations();
@@ -68,6 +68,7 @@ public class Samus extends Entity{
 	        animationIndex++;
 	        if (animationIndex >= GetSpriteAmount(playerAction)) {
 	            animationIndex = 0;
+	            shooting = false;
 	        }
 	    }
 	}
@@ -79,6 +80,11 @@ public class Samus extends Entity{
 	        if (playerAction != idle && !isPerformingOtherAction()) {
 	            playerAction = idle;
 	        }
+	    }
+	    
+	    if(shooting) {
+	    	//shoot placeholder
+	    	//playerAction = idle;
 	    }
 	}
 	
@@ -113,6 +119,10 @@ public class Samus extends Entity{
 		down = false;
 	}
 
+	public void setShooting(boolean shooting) {
+		this.shooting = shooting;
+	}
+
 	public boolean isLeft() {
 		return left;
 	}
@@ -143,6 +153,14 @@ public class Samus extends Entity{
 
 	public void setDown(boolean down) {
 		this.down = down;
+	}
+
+	public boolean isMoving() {
+		return moving;
+	}
+
+	public void setMoving(boolean moving) {
+		this.moving = moving;
 	}
 	
 	
