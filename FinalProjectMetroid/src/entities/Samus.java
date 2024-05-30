@@ -1,13 +1,10 @@
 package entities;
 
 import static utilities.Constants.PlayerConstants.*;
-import static utilities.Constants.Directions.*;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import utilities.loadnsave;
 
 public class Samus extends Entity{
 	private BufferedImage[][] animations;
@@ -23,29 +20,17 @@ public class Samus extends Entity{
 	}
 	
 	private void loadAnimations() throws IOException {
-		File is = new File("sprites\\samus\\Aim.png");
-		BufferedImage aim = ImageIO.read(is);
-		File is2 = new File("sprites\\samus\\run.png");
-		BufferedImage run = ImageIO.read(is2);
-		
-		
+		BufferedImage sprite = loadnsave.getSpriteAtlas(loadnsave.playerAtlas);
 		animations = new BufferedImage[5][10];
 		for(int i = 0; i < 1; i++) {
-			animations[aimingUp][i] = aim.getSubimage(56, 0, 28, 37);
+			animations[aimingUp][i] = sprite.getSubimage(56, 39, 28, 37);
+			animations[aimingStraight][i] = sprite.getSubimage(28, 38, 28, 37);
+			animations[aimingDown][i] = sprite.getSubimage(0, 38, 28, 37);
+			animations[idle][i] = sprite.getSubimage(28, 38, 28, 37);
 		}
 		for(int i = 0; i < 10; i++) {
-			animations[running][i] = run.getSubimage(30*i, 0, 30, 37);
-		}
-		for(int i = 0; i < 1; i++) {
-			animations[idle][i] = aim.getSubimage(28, 0, 28, 37);
-		}
-		for(int i = 0; i < 1; i++) {
-			animations[aimingStraight][i] = aim.getSubimage(28, 0, 28, 37);
-		}
-		for(int i = 0; i < 1; i++) {
-			animations[aimingDown][i] = aim.getSubimage(0, 0, 28, 37);
-		}
-		
+			animations[running][i] = sprite.getSubimage(30*i, 0, 30, 37);
+		}	
 	}
 	
 	public void update() {
@@ -55,7 +40,7 @@ public class Samus extends Entity{
 	}
 	
 	public void render(Graphics g) {
-		g.drawImage(animations[playerAction][animationIndex], (int) x, (int) y, 81, 108, null);
+		g.drawImage(animations[playerAction][animationIndex], (int) x, (int) y, 54, 72, null);
 	}
 
 	public void setPlayerAction(int action) {

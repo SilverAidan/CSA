@@ -6,19 +6,24 @@ import java.io.IOException;
 import entities.Samus;
 
 public class GameLoop implements Runnable {
-
-	private GameWindow window;
 	private GameScreen screen;
 	private Thread gameThread;
 	private final int fps = 120;
 	private final int ups = 200;
-
 	private Samus aran;
+	
+	public final static int tileSize = 32;
+	public final static float scale = 1.5f;
+	public final static int tilesWidth = 26;
+	public final static int tilesHeight = 14;
+	public final static int tilesSize = (int) (tileSize * scale);
+	public final static int gameWidth = tilesSize * tilesWidth;
+	public final static int gameHeight = tilesSize * tilesHeight;
 	
 	public GameLoop() throws IOException {
 		initializeEntities();
 		screen = new GameScreen(this);
-		window = new GameWindow(screen);
+		new GameWindow(screen);
 		screen.requestFocusInWindow();
 		startGameLoop();
 	}
@@ -46,11 +51,8 @@ public class GameLoop implements Runnable {
 
 		double timePerFrame = 1000000000.0 / fps;
 		double timePerUpdate = 1000000000.0 / ups;
-		long now = System.nanoTime();
-		
 		long previousTime = System.nanoTime();
 
-		
 		int frames = 0;
 		int updates = 0;
 		long lastCheck = System.currentTimeMillis();
