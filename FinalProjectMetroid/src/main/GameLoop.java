@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.io.IOException;
 
 import entities.Samus;
+import levels.LevelManager;
 
 public class GameLoop implements Runnable {
 	private GameScreen screen;
@@ -11,6 +12,7 @@ public class GameLoop implements Runnable {
 	private final int fps = 120;
 	private final int ups = 200;
 	private Samus aran;
+	private LevelManager levelManager;
 	
 	public final static int tileSize = 32;
 	public final static float scale = 1.5f;
@@ -29,11 +31,13 @@ public class GameLoop implements Runnable {
 	}
 
 	private void initializeEntities() throws IOException {
-		aran = new Samus(200,200);
+		aran = new Samus(200, 200, (int) (64 * scale), (int) (40 * scale));
+		levelManager = new LevelManager(this);
 		
 	}
 	
 	public void render(Graphics g) {
+		levelManager.draw(g);
 		aran.render(g);
 	}
 
@@ -44,6 +48,7 @@ public class GameLoop implements Runnable {
 	
 	public void update() {
 		aran.update();
+		levelManager.update();
 	}
 
 	@Override

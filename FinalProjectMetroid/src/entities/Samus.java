@@ -14,8 +14,8 @@ public class Samus extends Entity{
 	private boolean left, up, right, down;
 	private float playerSpeed = 2.0f;
 
-	public Samus(float x, float y) throws IOException {
-		super(x, y);
+	public Samus(float x, float y, int width, int height) throws IOException {
+		super(x, y, width, height);
 		loadAnimations();
 	}
 	
