@@ -15,6 +15,7 @@ public class Constants {
 		public static final int aimingDown = 4;
 		public static final int running = 1;
 		public static final int idle = 2;
+		public static final int jumping = 5;
 		
 		public static int GetSpriteAmount(int playerAction) {
 			switch(playerAction) {

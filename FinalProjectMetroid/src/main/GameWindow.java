@@ -17,6 +17,7 @@ public class GameWindow {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		frame.setBackground(null);
 		frame.addWindowFocusListener(new WindowFocusListener() {
 
 			@Override

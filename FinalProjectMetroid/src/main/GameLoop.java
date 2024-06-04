@@ -1,10 +1,12 @@
 package main;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import entities.Samus;
 import levels.LevelManager;
+import utilities.loadnsave;
 
 public class GameLoop implements Runnable {
 	private GameScreen screen;
@@ -15,12 +17,21 @@ public class GameLoop implements Runnable {
 	private LevelManager levelManager;
 	
 	public final static int tileSize = 32;
-	public final static float scale = 1.5f;
+	public final static float scale = 2f;
 	public final static int tilesWidth = 26;
 	public final static int tilesHeight = 14;
 	public final static int tilesSize = (int) (tileSize * scale);
 	public final static int gameWidth = tilesSize * tilesWidth;
 	public final static int gameHeight = tilesSize * tilesHeight;
+	
+	private int xLevelOffset;
+	private int leftBorder = (int)(.2 * gameWidth);
+	private int rightBorder = (int)(.8 * gameWidth);
+	private int levelTilesWidth = loadnsave.getLevelData()[0].length;
+	private int maxTilesOffset = levelTilesWidth - tilesWidth;
+	private int maxLevelOffsetX = maxTilesOffset * tilesSize;
+	
+	private BufferedImage background;
 	
 	public GameLoop() throws IOException {
 		initializeEntities();
@@ -31,14 +42,16 @@ public class GameLoop implements Runnable {
 	}
 
 	private void initializeEntities() throws IOException {
-		aran = new Samus(200, 200, (int) (64 * scale), (int) (40 * scale));
+		background = loadnsave.getSpriteAtlas(loadnsave.playingBg);
 		levelManager = new LevelManager(this);
-		
+		aran = new Samus(200, 200, (int)(28 * scale), (int)(37 * scale));
+		aran.loadLevelData(levelManager.getCurrentLevel().getLevelData());;
 	}
 	
 	public void render(Graphics g) {
-		levelManager.draw(g);
-		aran.render(g);
+		g.drawImage(background, 0, 0, GameLoop.gameWidth, GameLoop.gameHeight, null);
+		levelManager.draw(g, xLevelOffset);
+		aran.render(g, xLevelOffset);
 	}
 
 	private void startGameLoop() {
@@ -47,8 +60,26 @@ public class GameLoop implements Runnable {
 	}
 	
 	public void update() {
-		aran.update();
 		levelManager.update();
+		aran.update();
+		checkCloseBorder();;
+	}
+
+	private void checkCloseBorder() {
+	    int playerX = (int) aran.getHitbox().x;
+	    int diff = playerX - xLevelOffset;
+
+	    if (diff > rightBorder) {
+	        xLevelOffset += diff - rightBorder;
+	    } else if (diff < leftBorder) {
+	        xLevelOffset += diff - leftBorder;
+	    }
+
+	    if (xLevelOffset > maxLevelOffsetX) { 
+	        xLevelOffset = maxLevelOffsetX;
+	    } else if (xLevelOffset < 0) {
+	        xLevelOffset = 0;
+	    }
 	}
 
 	@Override

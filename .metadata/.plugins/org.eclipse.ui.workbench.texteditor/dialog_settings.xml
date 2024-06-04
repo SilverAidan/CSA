@@ -2,29 +2,32 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="true"/>
+		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="moving"/>
+		<item key="selection" value="init"/>
 		<list key="findhistory">
+			<item value="init"/>
+			<item value="inithitbox"/>
+			<item value="loadLevel"/>
+			<item value="loadLefel"/>
+			<item value="hitbox.y"/>
+			<item value="TILES_SIZE"/>
+			<item value="Game"/>
+			<item value="reset"/>
+			<item value="drawHi"/>
+			<item value="updateXPos"/>
+			<item value="speed"/>
+			<item value="28"/>
 			<item value="moving"/>
 			<item value="aiming"/>
 			<item value="setPlayerAction"/>
-			<item value="t "/>
-			<item value="Timer"/>
-			<item value="t"/>
-			<item value="if(me.getButton() == me.BUTTON1) {"/>
-			<item value="Blah"/>
-			<item value="radius"/>
-			<item value="radisu"/>
-			<item value="4"/>
-			<item value="10"/>
-			<item value="&#x09;public void drawLego(Graphics2D g) {"/>
-			<item value="8"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
+			<item value="tilesSize"/>
+			<item value="GameLoop"/>
 			<item value="8"/>
 			<item value="20"/>
 			<item value="5"/>

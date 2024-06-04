@@ -22,7 +22,7 @@ public class KeyboardInputs implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		switch(e.getKeyCode()) {
+		switch (e.getKeyCode()) {
 		case KeyEvent.VK_W:
 			screen.getLoop().getSamus().setUp(true);
 			break;
@@ -35,13 +35,15 @@ public class KeyboardInputs implements KeyListener {
 		case KeyEvent.VK_D:
 			screen.getLoop().getSamus().setRight(true);
 			break;
+		case KeyEvent.VK_SPACE:
+			screen.getLoop().getSamus().setJump(true);
+			break;
 		}
-		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		switch(e.getKeyCode()) {
+		switch (e.getKeyCode()) {
 		case KeyEvent.VK_W:
 			screen.getLoop().getSamus().setUp(false);
 			break;
@@ -53,6 +55,9 @@ public class KeyboardInputs implements KeyListener {
 			break;
 		case KeyEvent.VK_D:
 			screen.getLoop().getSamus().setRight(false);
+			break;
+		case KeyEvent.VK_SPACE:
+			screen.getLoop().getSamus().setJump(false);
 			break;
 		}
 	}
