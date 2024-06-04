@@ -27,6 +27,8 @@ public class Constants {
 				return 1;
 			case running:
 				return 10;
+			case jumping:
+				return 10;
 			case idle:
 				return 1;
 			default:

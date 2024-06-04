@@ -46,8 +46,9 @@ public class Samus extends Entity{
 		
 		for(int i = 0; i < 10; i++) {
 			animations[running][i] = sprite.getSubimage(30*i, 0, 30, 37);
-			animations[jumping][i] = sprite.getSubimage(33*i, 86, 33, 28);
-		}	
+			animations[jumping][i] = sprite.getSubimage(30*i, 86, 30, 28);
+		}
+		
 	}
 	
 	public void loadLevelData(int[][] levelData) {
@@ -86,7 +87,7 @@ public class Samus extends Entity{
 	    if (moving) {
 	        playerAction = running;
 	    } else {
-	        if (playerAction != idle && !isPerformingOtherAction()) {
+	        if (playerAction != idle) {
 	            playerAction = idle;
 	        }
 	    }
@@ -162,10 +163,6 @@ public class Samus extends Entity{
 			hitbox.x = GetEntityXWall(hitbox, xSpeed);
 		}
 
-	}
-
-	private boolean isPerformingOtherAction() {
-	    return playerAction == aimingUp || playerAction == aimingStraight || playerAction == aimingDown;
 	}
 	
 	public void resetDirBooleans() {

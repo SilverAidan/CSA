@@ -30,14 +30,14 @@
     <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
     <fullyQualifiedTypeName name="entities.Samus"/>
     <fullyQualifiedTypeName name="java.awt.event.WindowFocusListener"/>
-    <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
-    <fullyQualifiedTypeName name="utilities.loadnsave"/>
     <fullyQualifiedTypeName name="levels.LevelManager"/>
     <fullyQualifiedTypeName name="java.awt.Rectangle"/>
     <fullyQualifiedTypeName name="java.awt.Graphics"/>
-    <fullyQualifiedTypeName name="java.awt.Color"/>
     <fullyQualifiedTypeName name="main.GameLoop"/>
     <fullyQualifiedTypeName name="java.awt.geom.Rectangle2D"/>
     <fullyQualifiedTypeName name="utilities.Helpers"/>
     <fullyQualifiedTypeName name="java.awt.geom.Rectangle2D.Float"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="utilities.loadnsave"/>
+    <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 </qualifiedTypeNameHistroy>
